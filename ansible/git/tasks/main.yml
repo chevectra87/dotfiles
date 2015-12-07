@@ -1,0 +1,9 @@
+---
+- name: Install commons programs
+  apt: name={{ items }} state=latest
+  with_items:
+	- git-all
+	- git-daemon-run
+	- git-gui
+	- git-sh
+	- git-svn

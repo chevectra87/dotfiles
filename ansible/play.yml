@@ -1,0 +1,16 @@
+---
+- name: DotFiles
+  hosts: localhost
+  sudo: true
+  # vars_files:
+  pre_tasks:
+    - name: Update System
+      apt: update_cache=yes
+  roles:
+    - common
+    - python
+    - pip
+    - git
+    - docker
+    - docker-compose
+  # post_tasks: 
