@@ -2,14 +2,14 @@
 - name: Install commons programs
   apt: name={{ items }} state=latest
   with_items:
-	- guake
-	- guake-indicator
-	- htop
-	- mlocate
-	- vim
-	- vim-gnome
-	- vim-pathogen
-	- vim-python-jedi
-	- vim-scripts
-	- vim-syntax-docker
-	- alacarte
+    - guake
+    - guake-indicator
+    - htop
+    - mlocate
+    - vim
+    - vim-gnome
+    - vim-pathogen
+    - vim-python-jedi
+    - vim-scripts
+    - vim-syntax-docker
+    - alacarte
