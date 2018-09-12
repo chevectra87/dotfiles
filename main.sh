@@ -1,6 +1,7 @@
 #!/bin/sh
 
 . sh/common/init.sh ;
+
 echo -e "\n\n\n\n";
 echo -e "          888          888     .d888 d8b 888";
 echo -e "          888          888    d88P   Y8P 888";
@@ -13,21 +14,35 @@ echo -e "       Y88888   Y88P     Y888 888    888 888   Y8888   88888P'";
 echo -e "                                                             ${bakblu}rtancman${txtrst}";
 echo -e "\n${BGreen} Start...${txtrst}\n";
 
-if [ "root" != "$USER" ]; then
-	
-	echo -e "${bakred} [Error] You must run with root! ${txtrst}";
+if [ $DOTFILE_OS == "OSX" ]; then
+
+    . sh/osx/main.sh;
+
+elif [ $UID != 0 ]; then
+
+    echo -e "${bakred} [Error] You must run with root! ${txtrst}";
+
+elif [[ "DOTFILESEMPTYUSER" == "$DOTFILE_DEFAULT_USER" || "YOUR_USER_HERE" == "$DOTFILE_DEFAULT_USER" ]]; then
+
+    echo -e "${bakred} [Error] You must put your local USER! \n\n bash main.sh -u YOUR_USER_HERE ${txtrst}";
+
+elif [ ! -e "/$DOTFILE_HOME/$DOTFILE_DEFAULT_USER" ]; then
+
+    echo -e "${bakred} [Error] Your local USER do not exists! ${txtrst}";
 
 else
 
-	osrelease="$(cat /etc/*-release)"
+    osrelease="$(cat /etc/*-release)"
 
-	if [[ ${osrelease} =~ 'Fedora' ]]; then
+    if [[ ${osrelease} =~ 'Fedora' ]]; then
         . sh/fedora/main.sh;
-	elif [[ ${osrelease} =~ 'Debian' ]]; then
+    elif [[ ${osrelease} =~ 'Debian' ]]; then
         . sh/debian/main.sh;
-	else
+    elif [[ ${osrelease} =~ 'LinuxMint' || ${osrelease} =~ 'Ubuntu' ]]; then
+        . sh/ubuntu/main.sh;
+    else
         echo "OS notfound :( send me message or contribute with my project" ;
-	fi
+    fi
 
 fi
 

@@ -10,7 +10,7 @@ else
 
 	echo -e "${bakcyn}[Docker] Start Install ${txtrst}";
 
-	apt-get install docker-engine -y;
+	wget -qO- https://get.docker.com/ | sh;
 	service docker start ;
 	usermod -aG docker $DOTFILE_DEFAULT_USER ;
 	service docker restart;
