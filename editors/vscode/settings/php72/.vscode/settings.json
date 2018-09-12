@@ -1,0 +1,48 @@
+{
+  /* Collor theme */
+  "workbench.colorTheme": "Monokai Dimmed",
+  /* Exibe uma linha para que ajuda a demarcar o limite de caracters.
+    80 é o valor padrão do Prittier */
+  "editor.rulers": [80],
+  /* Alguns arquivos são inconvenientes na hora de realizar uma busca,
+    então eu removo algumas extensões. */
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "build/**/*.*": true,
+    "coverage/**/*.*": true
+  },
+  /* When you see this notification, it indicates that the VS Code file
+    watcher is running out of handles because the workspace is large and
+    contains many files. Exclude some directories can fix it. */
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/app/cache/**": true,
+    "**/app/logs/**": true
+  },
+  /* O VSCode exibe o conteúdo quando clico no arquivo, isso me atrapalha muito,
+    então eu deixo desabilitado */
+  "explorer.autoReveal": false,
+  /* Remove espaço a direita de todas as linhas ao salvar o arquivo */
+  "files.trimTrailingWhitespace": true,
+  /* Formata o arquivo ao salvá-lo */
+  "editor.formatOnSave": true,
+  /* Habilita o plugin de ícones (link acima) */
+  "workbench.iconTheme": "vscode-icons",
+  /* Habilita o EMMET */
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  /* Habilita o breadcumb */
+  "breadcrumbs.enabled": true,
+  /* PHP Settings */
+  "php.executablePath": "/usr/bin/php72",
+  "php.validate.executablePath": "/usr/bin/php72",
+  "window.zoomLevel": 0,
+  "git.autofetch": true
+}
